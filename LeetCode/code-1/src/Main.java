@@ -1,3 +1,5 @@
+import java.util.AbstractList;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //TIP 要<b>运行</b>代码，请按 <shortcut actionId="Run"/> 或
@@ -10,62 +12,88 @@ public class Main {
     你可以假设除了数字 0 之外，这两个数都不会以 0 开头。*/
 
     //测试代码
-    //public static void main(String[] args) {
-        //链表
-
-    //}
-
-
-
-
-
-
-
-/*    给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。
-    回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
-    例如，121 是回文，而 123 不是。*/
-
     public static void main(String[] args) {
+        //ArrayList相当与时顺序表
+        ArrayList list1 = new ArrayList<>();
 
-        int x = 1234321;
-        int revertedNumber = 0;
-        while (x > revertedNumber) {
-            revertedNumber = revertedNumber * 10 + x % 10;
-            x /= 10;
-        }
-        //     位数为偶                   位数为奇
-        if(x == revertedNumber || x == revertedNumber / 10)
+        list1.add(2);
+        list1.add(4);
+        list1.add(3);
+
+        ArrayList list2 = new ArrayList();
+        list2.add(5);
+        list2.add(6);
+        list2.add(4);
+
+        System.out.println(list1);
+        int num = 0;
+        for(int i = list1.size()-1;i>=0;i--)
         {
-            System.out.println("true");
+            int s1 = (int) list1.remove(i);
+            num = num*10+s1;
+            //System.out.println(s1);
         }
+
+        System.out.println(num);
+
+        int num2 = 0;
+        for(int i = list2.size()-1;i>=0;i--)
+        {
+            int s1 = (int) list2.remove(i);
+            num2 = num2*10+s1;
+            //System.out.println(s1);
+        }
+
+        System.out.println(num2);
+
+        int sum = num+num2;
+        System.out.println(sum);
+
+        //本题应该用链表
+
     }
+
+
+
+
+
+
+/*    罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
+
+    字符          数值
+    I             1
+    V             5
+    X             10
+    L             50
+    C             100
+    D             500
+    M             1000
+    例如， 罗马数字 2 写做 II ，即为两个并列的 1 。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。
+
+    通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。
+    同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：
+    I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。
+    X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。
+    C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
+    给定一个罗马数字，将其转换成整数。*/
+
+
+/*    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入罗马数字：");
+        String text = sc.nextLine();
+
+        char[] characters = text.toCharArray();
+
+        for (char c : characters) {
+            System.out.println(c);
+        }
+
+    }*/
 
     class Solution {
 
-        //1234321
-        public boolean isPalindrome(int x) {
 
-        //   小于0有-号      最后一位不为0，应为最后一位是0则第一位也是0，不符合条件
-            if(x<0 || (x!=0 && x%10==0))
-            {
-                return false;
-            }
-
-            //
-            int num = 0;
-            while(x>num)
-            {
-                //每次移动一位数到num上
-                //如：第一次 x = 123432   num = 1
-                //    第二次 x = 12343   num = 12
-                num = num*10+x%10;
-                x /= 10;
-
-            }
-
-            //判断返回
-            return (x == num  || x == num/10 );
-        }
     }
 
 }

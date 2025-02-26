@@ -1,2 +1,4 @@
-package test;public class Main13 {
+package test;
+
+public class Main13 {
 }
