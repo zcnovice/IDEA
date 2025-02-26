@@ -39,6 +39,12 @@ public class test2 {
 
 
 
+        byte aa = 10,bb = 30;//byte与short运行时会自动把类型转换为int
+
+        //byte c = aa + bb;//错误
+
+        int c1 = aa + bb;//正确
+
 
     }
 }

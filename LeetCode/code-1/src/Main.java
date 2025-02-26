@@ -5,51 +5,73 @@ import java.util.Scanner;
 //TIP 要<b>运行</b>代码，请按 <shortcut actionId="Run"/> 或
 // 点击装订区域中的 <icon src="AllIcons.Actions.Execute"/> 图标。
 public class Main {
+/*    给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。
+请你找出并返回这两个正序数组的 中位数 。
+算法的时间复杂度应该为 O(log (m+n)) 。
 
-/*    给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，
-    并且每个节点只能存储 一位 数字。
-    请你将两个数相加，并以相同形式返回一个表示和的链表。
-    你可以假设除了数字 0 之外，这两个数都不会以 0 开头。*/
+    示例 1：
+    输入：nums1 = [1,3], nums2 = [2]
+    输出：2.00000
+    解释：合并数组 = [1,2,3] ，中位数 2
+
+    示例 2：
+
+    输入：nums1 = [1,2], nums2 = [3,4]
+    输出：2.50000
+    解释：合并数组 = [1,2,3,4] ，中位数 (2 + 3) / 2 = 2.5*/
 
     //测试代码
     public static void main(String[] args) {
-        //ArrayList相当与时顺序表
-        ArrayList list1 = new ArrayList<>();
 
-        list1.add(2);
-        list1.add(4);
-        list1.add(3);
+        int [] num = {1,2};
+        int [] num1 = {3,4};
 
-        ArrayList list2 = new ArrayList();
-        list2.add(5);
-        list2.add(6);
-        list2.add(4);
-
-        System.out.println(list1);
-        int num = 0;
-        for(int i = list1.size()-1;i>=0;i--)
+        //数组一旦创建就不可改变，因此用ArrayList
+        ArrayList<Integer> array = new ArrayList<>();
+        int j = 0;
+        for(int i = 0;i+j<num.length+ num1.length;)
         {
-            int s1 = (int) list1.remove(i);
-            num = num*10+s1;
-            //System.out.println(s1);
+
+            if(num[i] < num1[j])
+            {
+                array.add(num[i]);
+                i++;
+                if(i>=num.length)
+                {
+                    array.add(num1[j]);
+                    j++;
+                }
+            }else {
+                array.add(num1[j]);
+                j++;
+
+                if(j >= num1.length)
+                {
+                    if(i<num.length)
+                    {
+                        array.add(num[i]);
+                    }
+                    //array.add(num[i+1]);
+                    i++;
+                }
+            }
         }
 
-        System.out.println(num);
-
-        int num2 = 0;
-        for(int i = list2.size()-1;i>=0;i--)
+        System.out.println(array);
+        Double d;
+        int s = array.size();   //1 2 3 6 7
+        if(s%2 == 0)
         {
-            int s1 = (int) list2.remove(i);
-            num2 = num2*10+s1;
-            //System.out.println(s1);
+            int e = s/2;
+            double ss = array.get(e-1)+array.get(e);
+            d = ss/2;
+        }
+        else {
+            int e = s/2;
+            d = Double.valueOf(array.get(e));
         }
 
-        System.out.println(num2);
-
-        int sum = num+num2;
-        System.out.println(sum);
-
-        //本题应该用链表
+        System.out.println(d);
 
     }
 
