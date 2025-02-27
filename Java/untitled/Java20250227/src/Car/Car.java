@@ -1,4 +1,4 @@
-package test;
+package Car;
 
 public class Car {
     private static int count = 0; // 静态变量
