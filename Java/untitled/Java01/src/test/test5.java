@@ -25,5 +25,22 @@ public class test5 {
         int m3 = num3%60;
         int h3 = num3/60;
         System.out.println("小鱼游了"+h3+"小时"+m3+"分钟");
+
+        //方法二
+
+        int hour,mini;
+        hour = h1-h;
+
+        if(m1<m)
+        {
+            hour--;
+            m1+=60;
+        }
+
+        mini = m1-m;
+
+        System.out.println("小鱼游了"+hour+"小时"+mini+"分钟");
+
+
     }
 }
