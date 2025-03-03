@@ -8,13 +8,13 @@ public class Test5 {
 
 
         //冒泡排序
-        paixUnits2(num);
+        Bubble_Sort(num);
         Print(num);
 
     }
 
 
-    public static int[] paixUnits(int[] num)
+    public static int[] Selection_Sort(int[] num)
     {
         //简单选择排序
         for(int j= 1;j<num.length;j++)
@@ -32,11 +32,10 @@ public class Test5 {
         return num;
     }
 
-
-    public static int[] paixUnits2(int[] num)
+    public static int[] Bubble_Sort(int[] num)
     {
         //冒泡排序
-        for(int i = 1;i<num.length+1;i++)
+        for(int i = 1;i<num.length;i++)
         {
             for(int j = 0;j<num.length-i;j++)
             {
