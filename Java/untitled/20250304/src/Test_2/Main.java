@@ -7,14 +7,13 @@ import Test_2.service.OutemanAttack;
 
 public class Main {
     public static void main(String[] args) {
-        Monster monster = new Monster("小怪兽", 100, 10);
+        Monster monster = new Monster("周豪", 100, 10);
         Outeman outeman = new Outeman("赛罗", 1000, 50);
 
         MonsterAttack monsterAttack = new MonsterAttack();
         OutemanAttack outemanAttack = new OutemanAttack();
 
         monsterAttack.attack(monster, outeman);
-
 
         outemanAttack.attack(monster, outeman);
         outemanAttack.attack(monster, outeman);
