@@ -33,9 +33,9 @@ public class test2 {
      * @param num
      */
     public static void Print(int [] num){
-        for(int i = 0; i < num.length; i++)
+        for(int number:num)
         {
-            System.out.print(num[i] + " ");
+            System.out.print(number + " ");
         }
         System.out.println();
     }
