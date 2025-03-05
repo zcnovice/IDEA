@@ -58,5 +58,4 @@ public class Test5 {
             System.out.print(num1 +" ");
         }
     }
-
 }
