@@ -1,4 +1,24 @@
 package test1;
 
 public class test1 {
+    public static void main(String[] args) {
+        Outer.Inter inter = new Outer.Inter();
+
+        Outer outer = new Outer();
+        Outer.Inter1  inter1 = outer.new Inter1();
+
+
+        outer.test();
+
+        USB usb = new USB() {
+            @Override
+            public void ss() {
+                System.out.println("匿名内部类实现");
+            }
+        };
+
+        usb.ss();
+        //优点,只用一次的话，不用在外面声明很多类的实现文件
+
+    }
 }

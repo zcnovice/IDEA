@@ -41,9 +41,7 @@ public class Warrior extends GameCharacter {
         int fDamage = (int) (Damage*1.2);
         int newHealth = gameCharacter.getHealth() - fDamage;
         gameCharacter.setHealth(newHealth);
-
     }
-
 
 }
 
