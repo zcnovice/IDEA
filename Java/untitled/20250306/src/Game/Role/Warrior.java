@@ -43,6 +43,8 @@ public class Warrior extends GameCharacter {
         gameCharacter.setHealth(newHealth);
 
     }
+
+
 }
 
 

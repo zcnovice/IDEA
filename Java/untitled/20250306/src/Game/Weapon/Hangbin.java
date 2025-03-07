@@ -10,4 +10,5 @@ public class Hangbin implements Weapon {
     public int getDamage() {
         return 25;
     }
+
 }

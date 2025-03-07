@@ -21,7 +21,7 @@ public class Main {
 
     }
 
-    //装备武器
+    //随机装备武器
     public static void Equip_weapons(GameCharacter role){
         Weapon[] weapons = {new Fenbao(),new Huoyanjian(),new Hangbin()};
          /*Weapon fenbao = new Fenbao();

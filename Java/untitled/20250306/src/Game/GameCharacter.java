@@ -55,4 +55,5 @@ public abstract class GameCharacter {
                 ", 剩余生命值=" + health +
                 '}';
     }
+
 }
