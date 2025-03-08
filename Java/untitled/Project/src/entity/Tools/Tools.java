@@ -1,2 +1,4 @@
-package entity.Tools;public class Tools {
+package entity.Tools;
+
+public class Tools {
 }

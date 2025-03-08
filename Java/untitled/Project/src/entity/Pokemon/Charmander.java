@@ -1,2 +1,4 @@
-package entity.Pokemon;public class Charmander {
+package entity.Pokemon;
+
+public class Charmander {
 }

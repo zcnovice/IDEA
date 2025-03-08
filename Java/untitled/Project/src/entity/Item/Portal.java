@@ -1,2 +1,4 @@
-package entity.Item;public class Portal {
+package entity.Item;
+
+public class Portal {
 }

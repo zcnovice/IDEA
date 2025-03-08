@@ -1,2 +1,4 @@
-package entity.Item;public class Monster {
+package entity.Item;
+
+public abstract class Monster {
 }

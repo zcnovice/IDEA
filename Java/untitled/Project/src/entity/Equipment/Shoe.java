@@ -1,2 +1,4 @@
-package entity.Equipment;public class Shoe {
+package entity.Equipment;
+
+public class Shoe {
 }

@@ -1,2 +1,4 @@
-package entity.Monster;public class Remoraid {
+package entity.Monster;
+
+public class Remoraid {
 }

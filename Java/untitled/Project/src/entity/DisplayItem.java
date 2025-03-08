@@ -1,2 +1,4 @@
-package entity;public class DisplayItem {
+package entity;
+
+public interface DisplayItem {
 }

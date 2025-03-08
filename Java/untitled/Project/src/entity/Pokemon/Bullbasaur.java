@@ -1,2 +1,4 @@
-package entity.Pokemon;public class Bullbasaur {
+package entity.Pokemon;
+
+public class Bullbasaur {
 }

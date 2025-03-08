@@ -1,2 +1,4 @@
-package entity.Item;public class HP {
+package entity.Item;
+
+public class HP {
 }

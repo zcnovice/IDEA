@@ -1,2 +1,4 @@
-package entity.Tools;public class Launcher {
+package entity.Tools;
+
+public class Launcher {
 }

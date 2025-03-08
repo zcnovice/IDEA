@@ -1,2 +1,4 @@
-package entity;public class level {
+package entity;
+
+public class Level {
 }

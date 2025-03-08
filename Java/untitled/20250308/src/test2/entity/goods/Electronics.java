@@ -1,4 +1,4 @@
-package test2.entity;
+package test2.entity.goods;
 
 public class Electronics extends Goods{
 

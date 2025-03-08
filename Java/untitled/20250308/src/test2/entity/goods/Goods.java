@@ -1,4 +1,4 @@
-package test2.entity;
+package test2.entity.goods;
 
 public abstract class Goods {
 
@@ -37,5 +37,14 @@ public abstract class Goods {
 
     public void setSum(int sum) {
         this.sum = sum;
+    }
+
+    @Override
+    public String toString() {
+        return "Goods{" +
+                "商品名称='" + name + '\'' +
+                ", 商品价格=" + price +
+                ", 剩余数量=" + sum +
+                '}';
     }
 }

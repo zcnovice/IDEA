@@ -1,2 +1,4 @@
-package entity;public class Adventurer {
+package entity;
+
+public class Adventurer {
 }

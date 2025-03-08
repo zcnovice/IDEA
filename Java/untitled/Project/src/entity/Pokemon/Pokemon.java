@@ -1,2 +1,4 @@
-package entity.Pokemon;public interface Pokemon {
+package entity.Pokemon;
+
+public abstract class Pokemon {
 }

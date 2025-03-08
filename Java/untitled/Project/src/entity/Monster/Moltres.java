@@ -1,2 +1,4 @@
-package entity.Monster;public class Moltres {
+package entity.Monster;
+
+public class Moltres {
 }

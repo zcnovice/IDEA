@@ -1,2 +1,4 @@
-package entity.Item;public class Treasure {
+package entity.Item;
+
+public class Treasure {
 }

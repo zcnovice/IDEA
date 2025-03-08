@@ -1,2 +1,4 @@
-package entity.Pokemon;public class Bikachu {
+package entity.Pokemon;
+
+public class Bikachu {
 }
