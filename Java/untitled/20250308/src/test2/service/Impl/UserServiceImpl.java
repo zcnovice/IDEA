@@ -21,8 +21,7 @@ public class UserServiceImpl implements UserService {
     public void addGoods(ArrayList<Goods> shoppingCart,Goods goods) {
         //判断是否还有货物
         if(goods.getSum() > 0)
-        {
-            //有货就添加进购物车（付款时货物才减一）
+        {   //有货就添加进购物车（付款时货物才减一）
             shoppingCart.add(goods);
         }
     }
@@ -114,7 +113,7 @@ public class UserServiceImpl implements UserService {
         for(int i = 0;i<shoppingList.size();i++)
         {
             //TODO
-            if((shoppingList.get(i).getName()).equals(name));
+            if((shoppingList.get(i).getName()).equals(name))
             {
                 return shoppingList.get(i);
             }
