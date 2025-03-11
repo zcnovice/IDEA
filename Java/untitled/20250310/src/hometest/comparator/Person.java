@@ -1,4 +1,4 @@
-package hometest.Comparable_1;
+package hometest.comparator;
 
 public class Person implements Comparable<Person>{
     String name;

@@ -1,4 +1,4 @@
-package test;
+package Exception;
 
 public class MainMyException {
     public static void main(String[] args) {

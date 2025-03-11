@@ -1,4 +1,4 @@
-package test;
+package Exception;
 
 public class MyException extends RuntimeException{
     public MyException() {
