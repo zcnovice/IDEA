@@ -1,35 +1,27 @@
 package homework;
 
-public enum UserEnum {
-    PHONE_ERROR(101,"手机号码格式错误"),
-    USER_NAME(102,"姓名长度过长"),
-    USER_ROOT(103,"用户权限不足");
+public enum ErrorEnum {
 
+    PHONE_ERROR(101, "手机号码格式错误"),
+    EMAIL_ERROR(102, "邮箱格式错误"),
+    USER_NOT_FOUND(103, "用户不存在"),
+    INVALID_PASSWORD(104, "密码错误");
 
-    private int value;
-    private String description;
+    private final int code;
+    private final String msg;
 
-    UserEnum() {
+    ErrorEnum(int code, String msg) {
+        this.code = code;
+        this.msg = msg;
     }
 
-    UserEnum(int value, String description) {
-        this.value = value;
-        this.description = description;
+    public int getCode() {
+        return code;
     }
 
-    public int getValue() {
-        return value;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
