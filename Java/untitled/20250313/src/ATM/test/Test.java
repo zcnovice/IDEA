@@ -2,10 +2,11 @@ package ATM.test;
 
 import ATM.entity.User;
 import ATM.service.Impl.ManagerServiceImpl;
-import ATM.service.ManagerService;
 
-public class test1 {
-    public static void main(String[] args) {
+public class Test {
+
+    public void Test1()
+    {
         ManagerServiceImpl msi = new ManagerServiceImpl();
 
 
@@ -25,27 +26,23 @@ public class test1 {
         msi.addUser(user7);
 
         boolean s = msi.addUser(user2);
-        System.out.println(s);
+        //System.out.println(s);
 
         boolean s2 = msi.addUser(user3);
-        System.out.println(s2);
+        //System.out.println(s2);
 
         boolean s3 = msi.addUser(user1);
-        System.out.println(s3);
+        //System.out.println(s3);
         boolean s4 = msi.addUser(admin1);
         boolean s5 = msi.addUser(admin2);
 
         boolean d1 = msi.deleteUser("李四");
-        System.out.println(d1);
+        //System.out.println(d1);
 
         boolean d2 = msi.deleteUser("李一");
-        System.out.println(d2);
-
-        msi.showUser();
+        //System.out.println(d2);
 
         msi.FreezingAccounts("张三");
         msi.showUser();
-
-
     }
 }

@@ -1,4 +1,5 @@
-import javax.lang.model.element.Element;
+package test;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -12,22 +13,13 @@ public class Main {
         arr.add("Date");
         arr.add("Elderberry");
 
-        Iterator<String> it = arr.iterator();
-        while (it.hasNext()) {
-            String fruit = it.next();
-            if (fruit.equals("Banana")) {
-                arr.remove(fruit); // 触发异常
-            }
-        }
-
-
         //注意怎么使用迭代器   不是用new
         //注意迭代器要定义变量类型<String>
-        //Iterator iterator = arr.iterator();
         Iterator<String> iterator = arr.iterator();
 
         Print(iterator);
 
+        iterator = arr.iterator();
         while(iterator.hasNext())
         {
             String s = iterator.next();
@@ -36,11 +28,10 @@ public class Main {
                 iterator.remove();
             }
         }
-
         System.out.println("==================");
+        iterator = arr.iterator();
 
         Print(iterator);
-
     }
 
     public static void Print(Iterator<String> iterator)
