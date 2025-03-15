@@ -12,7 +12,7 @@ public class CommonServiceImpl implements CommonService {
         {
             if(DataUtils.users.get(i).getUserName().equals(name))
             {
-                System.out.println("用户余额为："+ DataUtils.users.get(i).getBalance());
+                System.out.println(DataUtils.users.get(i).getUserName()+"余额为："+ DataUtils.users.get(i).getBalance());
             }
         }
     }
@@ -32,7 +32,7 @@ public class CommonServiceImpl implements CommonService {
                     //存钱入对应账户
                     int total = DataUtils.users.get(i).getBalance()+balance;
                     DataUtils.users.get(i).setBalance(total);
-                    System.out.println("用户当前余额为："+ DataUtils.users.get(i).getBalance());
+                    System.out.println(DataUtils.users.get(i).getUserName()+"当前余额为："+ DataUtils.users.get(i).getBalance());
                     return true;
                 }else{
                     System.out.println("账户状态异常");
@@ -60,7 +60,7 @@ public class CommonServiceImpl implements CommonService {
                         {
                             //取款金额是否大于账户剩余金额
                             DataUtils.users.get(i).setBalance(total);
-                            System.out.println("用户当前余额为："+ DataUtils.users.get(i).getBalance());
+                            System.out.println(DataUtils.users.get(i).getUserName()+"当前余额为："+ DataUtils.users.get(i).getBalance());
                             return true;
                         }
                         else{
@@ -88,7 +88,11 @@ public class CommonServiceImpl implements CommonService {
             {//判断我的账户是否有钱
 
                 boolean s =  Check(DataUtils.users.get(i));//检查我的账户状态是否正常
-                if(s)
+                //TODO
+                //两个人的账户都要检查是否冻结
+                boolean s1 = Check_U(HeName);
+
+                if(s && s1)
                 {
                     if(DataUtils.users.get(i).getBalance() > 0){
                         //从对应账户取钱
@@ -121,6 +125,22 @@ public class CommonServiceImpl implements CommonService {
         if(user.getState() == 1)
         {
             return  true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean Check_U(String name) {
+        //传入name 判断账户信息是否正常
+        for(int i = 0;i<DataUtils.users.size();i++)
+        {
+            if(DataUtils.users.get(i).getUserName().equals(name))
+            {
+                if(DataUtils.users.get(i).getState() == 1)
+                {
+                    return true;
+                }
+            }
         }
         return false;
     }

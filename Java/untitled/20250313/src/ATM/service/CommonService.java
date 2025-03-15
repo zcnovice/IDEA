@@ -46,5 +46,5 @@ public interface CommonService {
 
 
     //查询账户返还User
-    User Check_U(String name);
+    boolean Check_U(String name);
 }

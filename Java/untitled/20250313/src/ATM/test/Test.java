@@ -1,6 +1,7 @@
 package ATM.test;
 
 import ATM.entity.User;
+import ATM.service.Impl.CommonServiceImpl;
 import ATM.service.Impl.ManagerServiceImpl;
 
 public class Test {
@@ -42,7 +43,15 @@ public class Test {
         boolean d2 = msi.deleteUser("李一");
         //System.out.println(d2);
 
-        msi.FreezingAccounts("张三");
+
+        CommonServiceImpl csi = new CommonServiceImpl();
+        csi.CheckBalance("张三");
+        //csi.CheckBalance("旺财");
+        //csi.CheckBalance("ssss");
+
+        csi.Saving("张三",20000);
+        //csi.CheckBalance("张三");
+        //msi.FreezingAccounts("张三");
         msi.showUser();
     }
 }

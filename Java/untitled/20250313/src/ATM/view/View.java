@@ -2,6 +2,7 @@ package ATM.view;
 
 import ATM.DataUtils;
 import ATM.entity.User;
+import ATM.service.Impl.CommonServiceImpl;
 import ATM.service.Impl.ManagerServiceImpl;
 
 import java.util.Scanner;
@@ -34,7 +35,6 @@ public class View {
                 User adminUser = Login();
                 if(adminUser != null)
                 {
-                    //TODO
                     //进入管理员页面
                     System.out.println("尊敬的"+adminUser.getUserName()+"，美好一天，欢迎进入ATM管理系统");
                     while(INTERION)
@@ -54,7 +54,14 @@ public class View {
                 {
                     //TODO
                     //进入用户页面
-                    System.out.println("尊敬的"+user.getUserName()+"欢迎进入用户页面");
+                    System.out.println("尊敬的"+user.getUserName()+"欢迎进入ATM用户页面");
+                    while(INTERION)
+                    {
+                        System.out.println("1.查看当前登录用户余额     2.存钱     3.取钱    4.转账    5.回到主界面");
+                        INTERION = interfaceUser(user);
+                    }
+                    INTERION = true;
+                    num = -1;
                 }
             }else if(num == 3)
             {
@@ -105,7 +112,7 @@ public class View {
     }
 
 
-    //管理员工作界面
+    /*============================================管理员界面==========================================*/
     public boolean interfaceAdmin()
     {
         ManagerServiceImpl msi = new ManagerServiceImpl();
@@ -165,6 +172,45 @@ public class View {
         return true;
     }
 
+
+    /*============================================用户界面==========================================*/
+
+    public boolean interfaceUser(User user){
+        CommonServiceImpl csi = new CommonServiceImpl();
+        Scanner in = new Scanner(System.in);
+        int i = in.nextInt();
+
+//1.查看当前登录用户余额     2.存钱     3.取钱    4.转账    5.回到主界面
+        if(i == 1)
+        {
+            //1.查看当前登录用户余额
+            csi.CheckBalance(user.getUserName());
+        }else if(i == 2)
+        {
+            //2.存钱
+            System.out.println("输入存款金额：");
+            int balance = in.nextInt();
+            csi.Saving(user.getUserName(),balance);
+        } else if (i ==3) {
+            //3.取钱
+            System.out.println("输入取款金额：");
+            int balance = in.nextInt();
+            csi.Withdraw(user.getUserName(),balance);
+        } else if (i == 4) {
+            //4.转账
+            System.out.println("输入转账用户：");
+            String HeName = in.next();
+            System.out.println("输入转账金额：");
+            int balance = in.nextInt();
+            csi.Transfer(user.getUserName(),HeName,balance);
+        }else if(i == 5){
+            //5.回到主界面
+            return false;
+        }else{
+            System.out.println("非法输入，请重新输入：");
+        }
+        return true;
+    }
 }
 
 
