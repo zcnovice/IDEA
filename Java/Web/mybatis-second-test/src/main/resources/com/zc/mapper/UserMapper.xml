@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zc.mapper.UserMapper">
+
+    <resultMap id="UserMap" type="User">
+        <id property="user_id" column="user_id"/>
+        <result property="email" column="email"/>
+        <result property="username" column="username"/>
+<!--      一对一查询映射设置    实体类里面的变量名     userProfile的类型   -->
+        <association property="userProfile" javaType="UserProfile">
+            <id property="profile_id" column="profile_id"/>
+            <result property="address" column="address"/>
+            <result property="phone" column="phone"/>
+            <result property="real_name" column="real_name"/>
+        </association>
+    </resultMap>
+
+
+    <select id="findById" resultMap="UserMap">
+        SELECT u.user_id,u.username,u.email,up.real_name,up.phone,up.address FROM `user` u
+            LEFT JOIN user_profile up ON u.user_id = up.user_id
+            <where>
+                <if test="user_id != null and user_id != ''">
+                    and u.user_id = #{user_id}
+                </if>
+            </where>
+    </select>
+</mapper>
